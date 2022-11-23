@@ -1,0 +1,13 @@
+server:
+  port: 8085
+spring:
+   config: 
+      import: configserver:http://localhost:8888  
+   application:
+      name: product-service
+   profiles:
+     active: "pro"
+   cloud:
+      config:
+         enabled: true
+         uri: http://localhost:8888
